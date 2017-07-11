@@ -1,0 +1,67 @@
+/*html根元素，css具有继承能力，
+在它及body设置的样式，作用于所有元素*/
+/*css重置，让浏览器成为白纸*/
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 10px;
+  height: 100%;
+  background: url(./tu.jpg) bottom center;
+  background-repeat: no-repeat;
+  /*浏览器前缀 css3以前是新的，很多浏览器不支持，
+  或者部分支持，实验性质支持，加上前缀*/
+  -ms-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+.keys {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*vh只和屏幕有关，总共100份，比例分配*/
+  min-height: 100vh;
+}
+.key {
+  color: white;
+  border: .4rem solid #000;
+  /*rem是relative html标签的font-size等比例
+  换算关系
+  px 不靠谱了，屏幕密度*/
+  -webkit-border-radius: .5rem;
+  border-radius: .5rem;
+  font-size: 1.5rem;
+  margin: 1rem;
+  padding: 1.5rem .5rem;
+  width: 10rem;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  /*水平 垂直偏移量 阴影*/
+  text-shadow: 0 0 .5rem black;
+  /*样式的变化自动添加渐变
+  all 支持的样式
+  .7s时间
+  ease 改变的速度 快速运动 由慢到快*/
+  transition: all .7s ease;
+}
+.key div{
+  font-size: 4rem;
+}
+.key .sound{
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  color: #ffc600;
+}
+.playing{
+  /*变形*/
+  transform: scale(0.5);
+  border-color:#ffc600;
+  box-shadow: 0 0 1rem #ffc600;
+}
