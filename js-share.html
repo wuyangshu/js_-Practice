@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .popup {
+      width: 200px;
+      height: 200px;
+      background: red;
+      position: relative;
+      left: -200px;
+      top: 0;
+    }
+
+    .share {
+      width: 20px;
+      height: 50px;
+      background: blue;
+      position: absolute;
+      left: 200px;
+      top: 75px;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="popup"><span class="share">分享</span></div>
+</body>
+<script type="text/javascript">
+window.onload = function() {
+ var oDiv = document.querySelector('.popup');
+ oDiv.onmouseover = function() {
+   startMove(0);
+ }
+ oDiv.onmouseout = function() {
+   startMove(-200);
+ }
+ // oDiv.onmouseout = function() {
+ //   startRecover();
+ // }
+}
+var timer = null;
+function startMove(iTarget) {
+  clearInterval(timer);
+  var oDiv = document.querySelector('.popup');
+  timer = setInterval(function() {
+    var speed = 0;
+    if(oDiv.offsetLeft>iTarget){
+      speed = -10
+    }else {
+      speed = 10
+    }
+         if(oDiv.offsetLeft == iTarget) {
+           clearInterval(timer);
+         }else {
+          oDiv.style.left = oDiv.offsetLeft+speed+'px';
+         }
+  },30)
+}
+// function startRecover() {
+//   clearInterval(timer);
+//   var oDiv = document.querySelector('.popup');
+//   timer = setInterval(function() {
+//          if(oDiv.offsetLeft >= -200) {
+//            oDiv.style.left = oDiv.offsetLeft-10+'px';
+//          }else {
+//            clearInterval(timer);
+//          }
+//   },30)
+// }
+</script>
+</html>
