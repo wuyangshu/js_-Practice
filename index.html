@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+// let [a,b] = [1,2];
+// console.log(a,b);
+// 解构 快速的将复杂对象，加入到业务之中
+// let foo = () => {
+//   return [1,2,3];
+// }
+// let [a, ,b] = foo();
+// console.log(a,b);
+//
+// let [a, ...b] = [1,2,3];
+// console.log(a,b);
+//
+// let [,,,a,b] = [1,2,3];
+// console.log(a,b);
+
+// let [a, [b, [c,d]]] = [1,[2,[3,4]]];
+// console.log(a,b,c,d);
+
+// let {user:x} = {user:5};
+// console.log(x);
+//
+// let {user:x} = {user2:5};
+// console.log(x);
+
+// var {prop:x, prop2:y} = {prop:5, prop2:10}
+
+// const me = Object.freeze({name: "Jacopo"});
+// me.age = 28;
+// console.log(me);
+//
+const me = Object.freeze({
+  name: "jet",
+  pet: {
+    type:"dog",
+    name:"Spock"
+  }
+})
+me.pet.type = "Rocky";
+me.pet.type = "Germen";
+console.log(me);
+</script>
+</body>
+</html>
