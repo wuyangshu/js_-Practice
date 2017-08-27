@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    class Dog {
+      constructor(name, breed) {
+        this.name = name;
+        this.breed = breed;
+      }
+      bark() {
+        console.log(`Bark! My name is ${this.name}`);
+      }
+      cuddle() {
+        console.log('I love you owner');
+      }
+      static info() {
+        console.log('A dog is better than a cat by 10 times');
+      }
+      set nicknames(value) {
+        if(value.length < 2) {
+          console.log('不够霸气，长点');
+          return;
+        }
+        this.nick = value.trim();
+      }
+      get nicknames() {
+        return this.nick.toUpperCase();
+      }
+    }
+    Dog.info();
+    const sunny = new Dog('Sunny','Golden Doodle');
+    // sunny.info();
+    sunny.nicknames = ' little Dog ';
+    console.log(sunny);
+  </script>
+</body>
+</html>
